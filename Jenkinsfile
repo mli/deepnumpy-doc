@@ -16,7 +16,7 @@ stage("Build and Publish") {
 
       sh label:"Build HTML", script:"""set -ex
       conda activate ${ENV_NAME}
-      d2lbook build html
+      ./build_html.sh
       """
 
       if (env.BRANCH_NAME == 'master') {
