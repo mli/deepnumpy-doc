@@ -1,21 +1,47 @@
-Routines
-========
+``np`` Routines
+=====================
 
-Create Arrays
--------------
+In this chapter routine docstrings are presented, grouped by functionality.
+Many docstrings contain example code, which demonstrates basic usage
+of the routine. The examples assume that the `np` module is imported with::
 
-.. currentmodule:: mxnet.np
+  >>> from mxnet import np, npx
+  >>> npx.set_np()
 
-.. autosummary::
-    :nosignatures:
-    :toctree: _autogen
+A convenient way to execute examples is the ``%doctest_mode`` mode of
+IPython, which allows for pasting of multi-line examples and preserves
+indentation.
 
-    arange
-    array
-    empty
-    load
-    ones
-    ones_like
-    save
-    zeros
-    zeros_like
+.. toctree::
+   :maxdepth: 2
+
+   routines.array-creation
+   routines.array-manipulation
+   routines.bitwise
+   routines.char
+   routines.ctypeslib
+   routines.datetime
+   routines.dtype
+   routines.dual
+   routines.emath
+   routines.err
+   routines.fft
+   routines.financial
+   routines.functional
+   routines.help
+   routines.indexing
+   routines.io
+   routines.linalg
+   routines.logic
+   routines.ma
+   routines.math
+   routines.matlib
+   routines.other
+   routines.padding
+   routines.polynomials
+   random/index
+   routines.set
+   routines.sort
+   routines.statistics
+   routines.testing
+   routines.window

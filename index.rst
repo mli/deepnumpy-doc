@@ -47,10 +47,11 @@ following categories:
 
    .. card::
       :title: np module
-      :link: np/index.html
+      :link: np/routines.html
 
       Numpy-like module to manipulate multi-dimensional arrays.
 
+..
    .. card::
       :title: npx module
       :link: npx/index.html
@@ -74,7 +75,7 @@ following categories:
    :maxdepth: 1
    :hidden:
 
-   np/index
+   np/routines
    ..
       numpy-extension/index
    ..
