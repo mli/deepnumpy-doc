@@ -60,22 +60,18 @@ manually.
              .. code-block:: bash
 
                 # For python 3.7
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet-1.5.0b20190620-cp37-cp37m-macosx_10_11_x86_64.whl
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet-1.5.0-cp37-cp37m-macosx_10_11_x86_64.whl
                 # For python 3.6
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet-1.5.0b20190620-cp36-cp36m-macosx_10_11_x86_64.whl
-                # For python 3.5
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet-1.5.0b20190620-cp35-cp35m-macosx_10_11_x86_64.whl
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet-1.5.0-cp36-cp36m-macosx_10_11_x86_64.whl
 
           .. container:: mkl-dnn
 
              .. code-block:: bash
 
                 # For python 3.7
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet_mkl-1.5.0b20190620-cp37-cp37m-macosx_10_11_x86_64.whl
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_mkl-1.5.0-cp37-cp37m-macosx_10_11_x86_64.whl
                 # For python 3.6
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet_mkl-1.5.0b20190620-cp36-cp36m-macosx_10_11_x86_64.whl
-                # For python 3.5
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet_mkl-1.5.0b20190620-cp35-cp35m-macosx_10_11_x86_64.whl
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_mkl-1.5.0-cp36-cp36m-macosx_10_11_x86_64.whl
 
        .. container:: linux
 
@@ -83,21 +79,21 @@ manually.
 
              .. code-block:: bash
 
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet-1.5.0b20190620-py2.py3-none-manylinux1_x86_64.whl
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet-1.5.0-py2.py3-none-manylinux1_x86_64.whl
 
           .. container:: cuda
 
              .. code-block:: bash
 
-                # Here we assume CUDA 9.2 is installed.
-                pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet_cu92-1.5.0b20190620-py2.py3-none-manylinux1_x86_64.whl
+                # Here we assume CUDA 10.0 is installed.
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_cu100-1.5.0-py2.py3-none-manylinux1_x86_64.whl
 
           .. container:: cuda-mkl-dnn
 
               .. code-block:: bash
 
                  # Here we assume CUDA 10.1 is installed.
-                 pip install https://apache-mxnet.s3-us-west-2.amazonaws.com/dist/python/numpy/20190620/mxnet_cu101mkl-1.5.0b20190620-py2.py3-none-manylinux1_x86_64.whl
+                 pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_cu101mkl-1.5.0-py2.py3-none-manylinux1_x86_64.whl
 
        .. container:: windows
 

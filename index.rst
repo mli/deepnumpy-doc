@@ -1,13 +1,6 @@
 Apache MXNet (incubating) Documents
 ====================================
 
-.. toctree::
-   :maxdepth: 1
-   :hidden:
-
-   api/index
-
-
 .. a warning, will remove it later
 
 .. container:: new-site
@@ -73,9 +66,9 @@ following categories:
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
 
-   np/index
+   guide/index
+   api/index
    ..
       numpy-extension/index
    ..
