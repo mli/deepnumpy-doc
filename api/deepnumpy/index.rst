@@ -1,10 +1,9 @@
 .. _reference:
 
-###############
-NumPy Reference
-###############
+DeepNumPy Reference
+============================
 
-:Release: |version|
+:Release: |release|
 :Date: |today|
 
 

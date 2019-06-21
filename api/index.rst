@@ -12,4 +12,4 @@ following categories:
    :maxdepth: 1
    :hidden:
 
-   np/index
+   deepnumpy/index
