@@ -39,10 +39,10 @@ following categories:
 .. container:: cards
 
    .. card::
-      :title: np module
-      :link: np/index.html
+      :title: deepnumpy module
+      :link: api/deepnumpy/index.html
 
-      Numpy-like module to manipulate multi-dimensional arrays.
+      Numpy-like module with extensions to manipulate multi-dimensional arrays.
 
 ..
    .. card::
