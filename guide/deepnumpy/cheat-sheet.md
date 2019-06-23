@@ -2,7 +2,7 @@
 
 The deepnumpy front-end in MXNet provides a NumPy-like interface with extensions for deep learning. It contains two modules, `np` for the NumPy-like interface, and `npx` for extended operators that are useful for deep learning. This document provides a cheat sheet for the basic usage of these two modules.
 
-- If you are familiar with NumPy, please check [TODO] for difference between numpy and `np` module.
+- If you are familiar with NumPy, please check :ref:`deepnumpy_vs_numpy` for difference between numpy and the `mxnet.np` module.
 - If you used `mxnet.nd` before, check the tutorial [TODO]
 
 ```{.python .input  n=1}
@@ -306,7 +306,6 @@ c[[1,0,1,0], [0,1,2,0]] # Select elements (1,0),(0,1),(1,2) and (0,0)
 c[[1,0,1,0]][:,[0,1,2,0]] # Select a subset of the matrix’s rows
 ```
 
-
 ## Array Manipulation
 
 ### Transposing Array
@@ -443,7 +442,6 @@ with autograd.record():
 b.backward()
 a.grad
 ```
-
 
 ## Acknowledgement 
 
