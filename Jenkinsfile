@@ -11,6 +11,7 @@ stage("Build and Publish") {
       conda activate ${ENV_NAME}
       pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_cu100-1.5.0-py2.py3-none-manylinux1_x86_64.whl
       pip install git+https://github.com/d2l-ai/d2l-book
+      pip install matplotlib
       pip list
       """
 
