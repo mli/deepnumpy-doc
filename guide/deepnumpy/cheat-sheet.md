@@ -68,15 +68,15 @@ np.empty((3,2))  # Create an empty array
 ```{.python .input  n=12}
 # Save one array
 a = np.array([1, 2, 3])
-np.save('my_array', a)
-np.load('my_array')
+npx.save('my_array', a)
+npx.load('my_array')
 ```
 
 ```{.python .input  n=20}
 # Save a list of arrays
 b = np.array([4, 6, 8])
-np.save('my_arrays', [a, b])  # FIXME, cannot be a tuple
-np.load('my_arrays')
+npx.save('my_arrays', [a, b])  # FIXME, cannot be a tuple
+npx.load('my_arrays')
 ```
 
 ### Saving & Loading Text Files

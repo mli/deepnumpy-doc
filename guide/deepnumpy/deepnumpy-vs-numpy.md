@@ -81,8 +81,8 @@ The `save` method in `mxnet.np` save data into a binary format that's not compat
 
 ```{.python .input}
 a = np.array(1, ctx=gpu)
-np.save('a', a)
-np.load('a')
+npx.save('a', a)
+npx.load('a')
 ```
 
 ## Matplotlib
