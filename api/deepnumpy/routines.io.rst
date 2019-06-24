@@ -8,11 +8,9 @@ NumPy binary files (NPY, NPZ)
 .. autosummary::
    :toctree: generated/
 
+::
    load
    save
-
-::
-
    savez
    savez_compressed
 

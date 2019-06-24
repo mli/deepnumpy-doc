@@ -2,3 +2,5 @@
 /guide/deepnumpy/my_array
 /guide/deepnumpy/my_arrays
 /guide/deepnumpy/.ipynb_checkpoints/cheat-sheet-checkpoint.md
+.idea
+.DS_Store
