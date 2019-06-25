@@ -3,9 +3,6 @@
 DeepNumPy Reference
 ============================
 
-:Release: |release|
-:Date: |today|
-
 
 .. module:: mxnet.np
 
@@ -27,7 +24,6 @@ included in `mxnet.np`, describing what they are and what they do.
    swig
 
 
-Acknowledgements
-================
+**Acknowledgements**
 
 Large parts of this manual originate from NumPy's documents.

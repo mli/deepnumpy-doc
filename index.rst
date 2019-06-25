@@ -1,6 +1,8 @@
 Apache MXNet (incubating) Documents
 ====================================
 
+:Date: |today|
+
 .. a warning, will remove it later
 
 .. container:: new-site
@@ -16,8 +18,8 @@ Apache MXNet (incubating) Documents
    <style>.note {max-width: 756px;}</style>
 
 
-Install
--------
+Installation
+---------------
 
 .. Ignore prerequisites to make the index page concise, which will be shown at
    the install page
@@ -29,8 +31,30 @@ Install
 .. include:: install/install-include.rst
 
 
+Guidelines
+-------------
+
+This guide section is intended as an introductory overview of MXNet's modules
+for manipulating multi-dimensional arrays, loading data, contructing and
+training neural networks.
+
+.. container:: cards
+
+   .. card::
+      :title: DeepNumPy
+      :link: guide/deepnumpy/index.html
+
+      Manipulate multi-dimensional arrays with the numpy-like interface.
+
+   .. card::
+      :title: Gluon
+      :link: guide/gluon/index.html
+
+      Load data, contrusct and train neural networks with Gluon.
+
+
 API Documents
----------
+------------------
 
 This API section details functions, modules, and objects included in MXNet,
 describing what they are and what they do. The APIs are grouped into the
@@ -39,39 +63,20 @@ following categories:
 .. container:: cards
 
    .. card::
-      :title: deepnumpy module
+      :title: DeepNumPy
       :link: api/deepnumpy/index.html
 
-      Numpy-like module with extensions to manipulate multi-dimensional arrays.
-
-..
-   .. card::
-      :title: npx module
-      :link: npx/index.html
-
-      The extension module to np for deep learning related operators.
+      API documents for ``mxnet.np`` and ``mxnet.npx``.
 
    .. card::
-      :title: gluon module
-      :link: gluon/index.html
+      :title: Gluon
+      :link: api/gluon/index.html
 
-      Imperative APIs to load data, construct and train neural networks.
-
-   .. card::
-      :title: Gluon-related modules
-      :link: gluon-related/index.html
-
-      Modules, including context and optimizer, that can be used with Gluon.
-
+      API documents for ``mxnet.gluon`` and other related modules.
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    guide/index
    api/index
-   ..
-      numpy-extension/index
-   ..
-      gluon/index
-   ..
-      gluon-related/index

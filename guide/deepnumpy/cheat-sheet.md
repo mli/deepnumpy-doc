@@ -1,16 +1,15 @@
 # The DeepNumPy Cheat Sheet
+:label:`deepnumpy_cheat_sheet`
 
-The deepnumpy front-end in MXNet provides a NumPy-like interface with extensions for deep learning. It contains two modules, `np` for the NumPy-like interface, and `npx` for extended operators that are useful for deep learning. This document provides a cheat sheet for the basic usage of these two modules.
-
-- If you are familiar with NumPy, please check :ref:`deepnumpy_vs_numpy` for difference between numpy and the `mxnet.np` module.
-- If you used `mxnet.nd` before, check the tutorial [TODO]
+Let first import the `np` and `npx` module, and update MXNet to run in the
+NumPy-like mode.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
 npx.set_np()  # Change MXNet to the numpy-like mode.
 ```
 
-NDArray figure.
+NDArray figure (TODO)
 
 ## Creating Arrays
 
@@ -443,6 +442,6 @@ b.backward()
 a.grad
 ```
 
-## Acknowledgement 
+**Acknowledgement**
 
 A large part of this cheat sheet is adapted from www.datacamp.com.
