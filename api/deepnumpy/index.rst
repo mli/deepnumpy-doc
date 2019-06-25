@@ -22,6 +22,7 @@ included in `mxnet.np`, describing what they are and what they do.
    c-api
    internals
    swig
+   npx
 
 
 **Acknowledgements**
