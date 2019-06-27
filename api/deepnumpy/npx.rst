@@ -11,6 +11,12 @@ Compatibility
 
    set_np
    is_np_array
+   use_np_array
+   is_np_shape
+   use_np_shape
+   np_array
+   np_shape
+   reset_np
 
 Devices
 ---------
@@ -24,6 +30,7 @@ Devices
    gpu
    gpu_memory_info
    current_context
+   num_gpus
 
 Nerual networks
 -----------------------
@@ -31,36 +38,41 @@ Nerual networks
 .. autosummary::
    :toctree: generated/
 
-   Activation
-   BatchNorm
-   Convolution
-   Dropout
-   Embedding
-   FullyConnected
-   LayerNorm
-   Pooling
-   RNN
+   activation
+   batch_norm
+   convolution
+   dropout
+   embedding
+   fully_connected
+   layer_norm
+   pooling
+   rnn
+   leaky_relu
+   multibox_detection
+   multibox_prior
+   multibox_target
+   roi_pooling
 
 
-xxx
----
+More operators
+------------------
 
 .. autosummary::
    :toctree: generated/
 
+   sigmoid
+   smooth_l1
+   softmax
+   threading
+   topk
+   waitall
+   seed
+   load
+   save
+   one_hot
+   pick
+   reshape_like
    batch_flatten
    batch_dot
    gamma
-
-
-::
-
-   ', 'SequenceMask', '__all__', '__builtins__', '__cached__', '__doc__',
-   '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__',
-   '_op', '_register', 'absolute_import', 'batch_dot', 'batch_flatten',
-   'check_call', 'classproperty', 'cpu', 'cpu_pinned', 'ctypes',
-   'current_context', 'gamma', 'gpu', 'gpu_memory_info', '',
-   'is_np_shape', 'load', 'log_softmax', 'np_array', 'np_shape', 'num_gpus',
-   'one_hot', 'pick', 'relu', 'reset_np', 'reshape_like', 'save', 'set_np',
-   'sigmoid', 'softmax', 'threading', 'topk', 'use_np', 'use_np_array',
-   'use_np_shape', 'utils', 'waitall', 'warnings', 'with_metaclass']
+   sequence_mask
