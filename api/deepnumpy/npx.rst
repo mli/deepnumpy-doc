@@ -19,7 +19,6 @@ Devices
 .. autosummary::
    :toctree: generated/
 
-   Context
    cpu
    cpu_pinned
    gpu
