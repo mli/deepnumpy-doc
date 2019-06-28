@@ -1,4 +1,5 @@
 # Use GPUs
+:label:`crash_course_gpu`
 
 We often use GPUs to train and deploy neural networks, because it offers significant more computation power compared to CPUs. In this tutorial we will introduce how to use GPUs with MXNet.
 
@@ -127,3 +128,8 @@ for epoch in range(10):
     print("Epoch %d: loss %.3f, in %.1f sec" % (
         epoch, train_loss/len(train_data)/batch_size, time.time()-tic))
 ```
+
+## Next Steps
+
+Now you see how to train and predict a neural network with DeepNumPy and
+Gluon. You can check the guides to these two frontends: :ref:`deepnumpy_guide` and :ref:`gluon_guide`.

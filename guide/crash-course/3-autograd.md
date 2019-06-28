@@ -1,4 +1,5 @@
 # Automatic differentiation with `autograd`
+:label:`crash_course_autograd`
 
 We train models to get better and better as a function of experience. Usually, getting better means minimizing a loss function. To achieve this goal, we often iteratively compute the gradient of the loss with respect to weights and then update the weights accordingly. While the gradient calculations are straightforward through a chain rule, for complex models, working it out by hand can be a pain.
 
@@ -81,3 +82,7 @@ We know that `b` is a linear function of `a`, and `c` is chosen from `b`. Then t
 ```{.python .input}
 a.grad == c/a
 ```
+
+## Next Steps
+
+Now we can train a neural network now: :ref:`crash_course_train`.

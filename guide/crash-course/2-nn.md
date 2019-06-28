@@ -1,4 +1,6 @@
 # Create a neural network
+:label:`crash_course_nn`
+
 
 Now let's look how to create neural networks in Gluon. In addition the `np` package that we just covered, we now will also import the neural network `nn` package from `gluon`.
 
@@ -124,3 +126,8 @@ Finally, let's access a particular layer's weight
 ```{.python .input  n=8}
 net.blk[1].weight.data()
 ```
+
+## Next Steps
+
+Before introducing how to train a neural network, let's see how to automatically
+compute the gradients in :ref:`crash_course_autograd`.

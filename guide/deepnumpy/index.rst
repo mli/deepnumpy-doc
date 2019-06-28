@@ -1,3 +1,5 @@
+.. _deepnumpy_guide:
+
 DeepNumPy
 =============
 

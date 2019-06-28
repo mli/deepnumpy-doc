@@ -1,3 +1,5 @@
+.. _gluon_guide:
+
 Gluon
 ======
 

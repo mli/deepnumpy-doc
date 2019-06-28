@@ -1,10 +1,11 @@
 # Predict with a pre-trained model
+:label:`crash_course_predict`
 
 A saved model can be used in multiple places, such as to continue training, to fine tune the model, and for prediction. In this tutorial we will discuss how to predict new examples using a pretrained model.
 
 ## Prerequisites
 
-Please run the [previous tutorial](train.md) to train the network and save its parameters to file. You will need this file to run the following steps.
+Please run :label:`crash_course_train` to train the network and save its parameters to file. You will need this file to run the following steps.
 
 ```{.python .input  n=1}
 from mxnet import np, npx, gluon, image
@@ -135,3 +136,8 @@ for i in idx:
 ```
 
 As can be seen, the model is fairly confident the image contains a golden retriever.
+
+## Next Steps
+
+We may both training and prediction are a little bit slow. If you have GPU
+available, we can make it faster: :ref:`crash_course_gpu`.

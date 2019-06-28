@@ -1,4 +1,5 @@
 # Train the neural network
+:label:`crash_course_train`
 
 In this section, we will discuss how to train the previously defined network with data. We first import the libraries. The new ones are `mxnet.init` for more weight initialization methods, the `datasets` and `transforms` to load and transform computer vision datasets, `matplotlib` for drawing, and `time` for benchmarking.
 
@@ -155,3 +156,7 @@ Finally, we save the trained parameters onto disk, so that we can use them later
 ```{.python .input  n=13}
 net.save_parameters('net.params')
 ```
+
+## Next Steps
+
+Once the model is trained and saved, we can use it to predict new examples: :ref:`crash_course_predict`.

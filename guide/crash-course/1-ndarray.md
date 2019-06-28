@@ -1,4 +1,5 @@
-# Manipulate data with `ndarray`
+# Manipulate data with DeepNumPy
+:label:`crash_course_ndarray`
 
 We'll start by introducing the `np` package, MXNet’s primary tool for storing and
 transforming data. If you’ve worked with `NumPy` before, you’ll notice `np`  is,
@@ -7,7 +8,7 @@ by design, similar to NumPy.
 ## Get started
 
 To get started, let's import the `np` package together with `npx`, which stands
-for NumPy extensions.
+for NumPy extensions. We call `np` with `npx` as the DeepNumPy frontend.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
@@ -100,3 +101,7 @@ a = x.asnumpy()
 ```{.python .input  n=30}
 np.array(a)
 ```
+
+## Next Steps
+
+Learn how to construct a neural network with the Gluon module: :ref:`crash_course_nn`.
