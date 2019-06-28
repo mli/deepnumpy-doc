@@ -6,5 +6,5 @@ Guide
 .. toctree::
    :maxdepth: 1
 
-   getting-started/index
+   crash-course/index
    deepnumpy/index

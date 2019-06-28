@@ -4,3 +4,7 @@
 /guide/deepnumpy/.ipynb_checkpoints/cheat-sheet-checkpoint.md
 .idea
 .DS_Store
+**/.ipynb_checkpoints/*
+*.jpg
+*.params
+*.txt
