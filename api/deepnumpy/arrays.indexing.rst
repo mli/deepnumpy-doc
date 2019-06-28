@@ -5,7 +5,7 @@ Indexing
 
 .. sectionauthor:: adapted from "Guide to NumPy" by Travis E. Oliphant
 
-.. currentmodule:: numpy
+.. currentmodule:: mxnet.np
 
 .. index:: indexing, slicing
 

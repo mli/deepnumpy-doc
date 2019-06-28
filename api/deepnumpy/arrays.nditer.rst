@@ -1,4 +1,4 @@
-.. currentmodule:: numpy
+.. currentmodule:: mxnet.np
 
 .. _arrays.nditer:
 
