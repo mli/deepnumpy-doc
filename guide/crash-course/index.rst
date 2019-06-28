@@ -1,7 +1,7 @@
 Crash Course
 ============
 
-This crash course will give you a quick overview of the core concept of NDArray
+This crash course will give you a quick overview of the core concept of DeepNumPy
 (manipulating multiple dimensional arrays) and Gluon (create and train neural
 networks). This is a good place to start if you are already familiar with
 machine learning or other deep learning frameworks.
