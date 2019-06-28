@@ -1,14 +1,17 @@
 # Manipulate data with `ndarray`
 
-We'll start by introducing the `NDArray`, MXNet’s primary tool for storing and transforming data. If you’ve worked with `NumPy` before, you’ll notice that a NDArray is, by design, similar to NumPy’s multi-dimensional array.
+We'll start by introducing the `np` package, MXNet’s primary tool for storing and
+transforming data. If you’ve worked with `NumPy` before, you’ll notice `np`  is,
+by design, similar to NumPy.
 
 ## Get started
 
-To get started, let's import the `ndarray` package (`nd` is shortform) from MXNet.
+To get started, let's import the `np` package together with `npx`, which stands
+for NumPy extensions.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
-npx.set_np()  # Change MXNet to the numpy-like mode. 
+npx.set_np()  # Change MXNet to the numpy-like mode.
 ```
 
 Next, let's see how to create a 2D array (also called a matrix) with values from two sets of numbers: 1, 2, 3 and 4, 5, 6. This might also be referred to as a tuple of a tuple of integers.
@@ -31,7 +34,7 @@ y = np.random.uniform(-1,1, (2,3))
 y
 ```
 
-As with NumPy, the dimensions of each NDArray are accessible by accessing the `.shape` attribute. We can also query its `size`, which is equal to the product of the components of the shape. In addition, `.dtype` tells the data type of the stored values.
+As with NumPy, the dimensions of each ndarray are accessible by accessing the `.shape` attribute. We can also query its `size`, which is equal to the product of the components of the shape. In addition, `.dtype` tells the data type of the stored values.
 
 ```{.python .input  n=17}
 (x.shape, x.size, x.dtype)
@@ -39,7 +42,7 @@ As with NumPy, the dimensions of each NDArray are accessible by accessing the `.
 
 ## Operations
 
-NDArray supports a large number of standard mathematical operations. Such as element-wise multiplication:
+A ndarray supports a large number of standard mathematical operations. Such as element-wise multiplication:
 
 ```{.python .input  n=18}
 x * y
@@ -59,7 +62,7 @@ np.dot(x, y.T)
 
 ## Indexing
 
-MXNet NDArrays support slicing in all the ridiculous ways you might imagine accessing your data. Here’s an example of reading a particular element, which returns a 1D array with shape `(1,)`.
+The ndarrays support slicing in all the ridiculous ways you might imagine accessing your data. Here’s an example of reading a particular element, which returns a 1D array with shape `(1,)`.
 
 ```{.python .input  n=25}
 y[1,2]
@@ -85,9 +88,9 @@ y[1:2,0:2] = 4
 y
 ```
 
-## Converting between MXNet NDArray and NumPy
+## Converting between MXNet ndarrays and NumPy ndarrays
 
-Converting MXNet NDArrays to and from NumPy is easy. The converted arrays do not share memory.
+Converting MXNet ndarrays to and from NumPy ndarrays is easy. The converted arrays do not share memory.
 
 ```{.python .input  n=29}
 a = x.asnumpy()

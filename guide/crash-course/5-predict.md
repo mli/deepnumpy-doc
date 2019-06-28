@@ -22,7 +22,6 @@ net.add(nn.Conv2D(channels=6, kernel_size=5, activation='relu'),
         nn.MaxPool2D(pool_size=2, strides=2),
         nn.Conv2D(channels=16, kernel_size=3, activation='relu'),
         nn.MaxPool2D(pool_size=2, strides=2),
-        nn.Flatten(),
         nn.Dense(120, activation="relu"),
         nn.Dense(84, activation="relu"),
         nn.Dense(10))
@@ -122,7 +121,7 @@ def transform(data):
     data = np.expand_dims(np.transpose(data, (2,0,1)), axis=0)
     rgb_mean = np.array([0.485, 0.456, 0.406]).reshape((1,3,1,1))
     rgb_std = np.array([0.229, 0.224, 0.225]).reshape((1,3,1,1))
-    return (np.array(data).astype('float32') / 255 - rgb_mean) / rgb_std
+    return (data.astype('float32') / 255 - rgb_mean) / rgb_std
 ```
 
 Now we can recognize the object in the image now. We perform an additional softmax on the output to obtain probability scores. And then print the top-5 recognized objects.

@@ -59,7 +59,6 @@ net.add(nn.Conv2D(channels=6, kernel_size=5, activation='relu'),
         nn.MaxPool2D(pool_size=2, strides=2),
         nn.Conv2D(channels=16, kernel_size=3, activation='relu'),
         nn.MaxPool2D(pool_size=2, strides=2),
-        nn.Flatten(),
         nn.Dense(120, activation="relu"),
         nn.Dense(84, activation="relu"),
         nn.Dense(10))
@@ -122,7 +121,7 @@ for epoch in range(10):
         for l in losses:
             l.backward()
         trainer.step(batch_size)
-        # Diff 5: sum losses over all devices. Here float will copy data 
+        # Diff 5: sum losses over all devices. Here float will copy data
         # into CPU.
         train_loss += sum([float(l.sum()) for l in losses])
     print("Epoch %d: loss %.3f, in %.1f sec" % (

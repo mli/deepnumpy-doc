@@ -12,9 +12,6 @@ from IPython import display
 import matplotlib.pyplot as plt
 import time
 npx.set_np()
-
-#from mxnet.gluon.data.vision import datasets, transforms
-
 ```
 
 ## Get data
@@ -29,7 +26,7 @@ X, y = mnist_train[0]
 ('X shape: ', X.shape, 'X dtype', X.dtype, 'y:', y)
 ```
 
-Each example in this dataset is a $28\times 28$ size grey image, which is presented as NDArray with the shape format of `(height, width, channel)`.  The label is a `numpy` scalar.
+Each example in this dataset is a $28\times 28$ size grey image, which is presented as ndarray with the shape format of `(height, width, channel)`.  The label is a `numpy` scalar.
 
 Next, we visualize the first six examples.
 
@@ -95,7 +92,6 @@ net.add(nn.Conv2D(channels=6, kernel_size=5, activation='relu'),
         nn.MaxPool2D(pool_size=2, strides=2),
         nn.Conv2D(channels=16, kernel_size=3, activation='relu'),
         nn.MaxPool2D(pool_size=2, strides=2),
-        nn.Flatten(),
         nn.Dense(120, activation="relu"),
         nn.Dense(84, activation="relu"),
         nn.Dense(10))

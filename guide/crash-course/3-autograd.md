@@ -21,7 +21,7 @@ x = np.array([[1, 2], [3, 4]])
 x
 ```
 
-Once we compute the gradient of $f(x)$ with respect to $x$, we’ll need a place to store it. In MXNet, we can tell an NDArray that we plan to store a gradient by invoking its `attach_grad` method.
+Once we compute the gradient of $f(x)$ with respect to $x$, we’ll need a place to store it. In MXNet, we can tell an ndarray that we plan to store a gradient by invoking its `attach_grad` method.
 
 ```{.python .input  n=6}
 x.attach_grad()

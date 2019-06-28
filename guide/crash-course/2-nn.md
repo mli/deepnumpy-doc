@@ -1,11 +1,11 @@
 # Create a neural network
 
-Now let's look how to create neural networks in Gluon. In addition the NDArray package (`nd`) that we just covered, we now will also import the neural network `nn` package from `gluon`.
+Now let's look how to create neural networks in Gluon. In addition the `np` package that we just covered, we now will also import the neural network `nn` package from `gluon`.
 
 ```{.python .input  n=2}
 from mxnet import np, npx
 from mxnet.gluon import nn
-npx.set_np()  # Change MXNet to the numpy-like mode. 
+npx.set_np()  # Change MXNet to the numpy-like mode.
 ```
 
 ## Create your neural network's first layer
