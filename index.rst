@@ -15,7 +15,7 @@ Apache MXNet (incubating) Documents
 
 .. raw:: html
 
-   <style>.note {max-width: 756px;}</style>
+   <style>.note {max-width: 782px;}</style>
 
 
 Installation
