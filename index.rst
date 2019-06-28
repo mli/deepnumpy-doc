@@ -10,8 +10,8 @@ Apache MXNet (incubating) Documents
    .. note::
 
       This is a preview of Apache MXNet (incubating)'s new **numpy-like**
-      interface. It only contains the API documents, please check MXNet's main
-      website for more documents.
+      interface. It only contains a subset of documents, please check MXNet's
+      main website for more.
 
 .. raw:: html
 
