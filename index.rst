@@ -41,6 +41,13 @@ training neural networks.
 .. container:: cards
 
    .. card::
+      :title: Crash Course
+      :link: guide/crash-course/index.html
+
+      A 60-min crash course to train and predict with a convolutional neural
+      network.
+
+   .. card::
       :title: DeepNumPy
       :link: guide/deepnumpy/index.html
 
