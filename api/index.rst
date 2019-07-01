@@ -13,3 +13,4 @@ following categories:
    :hidden:
 
    deepnumpy/index
+   gluon/index
