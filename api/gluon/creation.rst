@@ -11,3 +11,4 @@ large set of pre-defined neural network layers.
    block
    container
    nn
+   rnn
