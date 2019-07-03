@@ -80,6 +80,12 @@ manually.
              .. code-block:: bash
 
                 pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet-1.5.0-py2.py3-none-manylinux1_x86_64.whl
+                
+          .. container:: mkl-dnn
+
+             .. code-block:: bash
+
+                pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_mkl-1.5.0-py2.py3-none-manylinux1_x86_64.whl
 
           .. container:: cuda
 
