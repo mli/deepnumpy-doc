@@ -26,16 +26,16 @@ Matrix and vector products
    :toctree: generated/
 
    dot
+   vdot
+   inner
+   outer
+   tensordot
+   einsum
 
 ::
 
    linalg.multi_dot
-   vdot
-   inner
-   outer
    matmul
-   tensordot
-   einsum
    einsum_path
    linalg.matrix_power
    kron
