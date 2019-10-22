@@ -172,7 +172,7 @@ integer or bool). There are two types of advanced indexing: integer
 and Boolean.
 
 Advanced indexing always returns a *copy* of the data (contrast with
-basic slicing that returns a :term:`view`).
+some cases in basic slicing that returns a :term:`view`).
 
 .. warning::
 
@@ -184,7 +184,8 @@ basic slicing that returns a :term:`view`).
 
    Also recognize that ``x[[1,2,3]]`` will trigger advanced indexing,
    whereas due to the deprecated Numeric compatibility mentioned above,
-   ``x[[1,2,slice(None)]]`` will trigger basic slicing.
+   ``x[[1,2,slice(None)]]`` will trigger basic slicing in the official NumPy
+   which is not currently supported in MXNet `numpy` module.
 
 Integer array indexing
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -199,7 +200,7 @@ Purely integer array indexing
 When the index consists of as many integer arrays as the array being indexed
 has dimensions, the indexing is straight forward, but different from slicing.
 
-Advanced indexes always are :ref:`broadcast<ufuncs.broadcasting>` and
+Advanced indexes always are broadcasting and
 iterated as *one*::
 
      result[i_1, ..., i_M] == x[ind_1[i_1, ..., i_M], ind_2[i_1, ..., i_M],
@@ -218,54 +219,6 @@ shapes ``ind_1, ..., ind_N``.
     >>> x = np.array([[1, 2], [3, 4], [5, 6]])
     >>> x[[0, 1, 2], [0, 1, 0]]
     array([1, 4, 5])
-
-To achieve a behaviour similar to the basic slicing above, broadcasting can be
-used. The function :func:`ix_` can help with this broadcasting. This is best
-understood with an example.
-
-.. admonition:: Example
-
-    From a 4x3 array the corner elements should be selected using advanced
-    indexing. Thus all elements for which the column is one of ``[0, 2]`` and
-    the row is one of ``[0, 3]`` need to be selected. To use advanced indexing
-    one needs to select all elements *explicitly*. Using the method explained
-    previously one could write:
-
-    >>> x = array([[ 0,  1,  2],
-    ...            [ 3,  4,  5],
-    ...            [ 6,  7,  8],
-    ...            [ 9, 10, 11]])
-    >>> rows = np.array([[0, 0],
-    ...                  [3, 3]], dtype=np.intp)
-    >>> columns = np.array([[0, 2],
-    ...                     [0, 2]], dtype=np.intp)
-    >>> x[rows, columns]
-    array([[ 0,  2],
-           [ 9, 11]])
-
-    However, since the indexing arrays above just repeat themselves,
-    broadcasting can be used (compare operations such as
-    ``rows[:, np.newaxis] + columns``) to simplify this:
-
-    >>> rows = np.array([0, 3], dtype=np.intp)
-    >>> columns = np.array([0, 2], dtype=np.intp)
-    >>> rows[:, np.newaxis]
-    array([[0],
-           [3]])
-    >>> x[rows[:, np.newaxis], columns]
-    array([[ 0,  2],
-           [ 9, 11]])
-
-    This broadcasting can also be achieved using the function :func:`ix_`:
-
-    >>> x[np.ix_(rows, columns)]
-    array([[ 0,  2],
-           [ 9, 11]])
-
-    Note that without the ``np.ix_`` call, only the diagonal elements would
-    be selected, as was used in the previous example. This difference is the
-    most important thing to remember about indexing with multiple advanced
-    indexes.
 
 Combining advanced and basic indexing
 """""""""""""""""""""""""""""""""""""
@@ -350,28 +303,10 @@ C-style. If *obj* has :const:`True` values at entries that are outside
 of the bounds of *x*, then an index error will be raised. If *obj* is
 smaller than *x* it is identical to filling it with :const:`False`.
 
-.. admonition:: Example
+.. note::
 
-    A common use case for this is filtering for desired element values.
-    For example one may wish to select all entries from an array which
-    are not NaN:
-
-    >>> x = np.array([[1., 2.], [np.nan, 3.], [np.nan, np.nan]])
-    >>> x[~np.isnan(x)]
-    array([ 1.,  2.,  3.])
-
-    Or wish to add a constant to all negative elements:
-
-    >>> x = np.array([1., -1., -2., 3])
-    >>> x[x < 0] += 20
-    >>> x
-    array([  1.,  19.,  18.,   3.])
-
-In general if an index includes a Boolean array, the result will be
-identical to inserting ``obj.nonzero()`` into the same position
-and using the integer array indexing mechanism described above.
-``x[ind_1, boolean_array, ind_2]`` is equivalent to
-``x[(ind_1,) + boolean_array.nonzero() + (ind_2,)]``.
+Boolean indexing currently only supports a single boolean ndarray as a index.
+An composite index including a boolean array is not supported for now.
 
 If there is only one Boolean array and no integer indexing array present,
 this is straight forward. Care must only be taken to make sure that the
@@ -382,58 +317,19 @@ with.
 
     From an array, select all rows which sum up to less or equal two:
 
-    >>> x = np.array([[0, 1], [1, 1], [2, 2]])
+    >>> x = np.array([[0, 1], [1, 1], [2, 2]], dtype=np.int32)
     >>> rowsum = x.sum(-1)
-    >>> x[rowsum <= 2, :]
+    >>> x[rowsum <= 2]
     array([[0, 1],
-           [1, 1]])
+           [1, 1]], dtype=int32)
 
     But if ``rowsum`` would have two dimensions as well:
 
     >>> rowsum = x.sum(-1, keepdims=True)
     >>> rowsum.shape
     (3, 1)
-    >>> x[rowsum <= 2, :]    # fails
-    IndexError: too many indices
-    >>> x[rowsum <= 2]
-    array([0, 1])
-
-    The last one giving only the first elements because of the extra dimension.
-    Compare ``rowsum.nonzero()`` to understand this example.
-
-Combining multiple Boolean indexing arrays or a Boolean with an integer
-indexing array can best be understood with the
-:meth:`obj.nonzero() <ndarray.nonzero>` analogy. The function :func:`ix_`
-also supports boolean arrays and will work without any surprises.
-
-.. admonition:: Example
-
-    Use boolean indexing to select all rows adding up to an even
-    number. At the same time columns 0 and 2 should be selected with an
-    advanced integer index. Using the :func:`ix_` function this can be done
-    with:
-
-    >>> x = array([[ 0,  1,  2],
-    ...            [ 3,  4,  5],
-    ...            [ 6,  7,  8],
-    ...            [ 9, 10, 11]])
-    >>> rows = (x.sum(-1) % 2) == 0
-    >>> rows
-    array([False,  True, False,  True])
-    >>> columns = [0, 2]
-    >>> x[np.ix_(rows, columns)]
-    array([[ 3,  5],
-           [ 9, 11]])
-
-    Without the ``np.ix_`` call or only the diagonal elements would be
-    selected.
-
-    Or without ``np.ix_`` (compare the integer array examples):
-
-    >>> rows = rows.nonzero()[0]
-    >>> x[rows[:, np.newaxis], columns]
-    array([[ 3,  5],
-           [ 9, 11]])
+    >>> x[rowsum <= 2]  # fail
+    IndexError: boolean index did not match indexed array along dimension 1
 
 Detailed notes
 --------------
@@ -441,92 +337,19 @@ Detailed notes
 These are some detailed notes, which are not of importance for day to day
 indexing (in no particular order):
 
-* The native NumPy indexing type is ``intp`` and may differ from the
-  default integer array type. ``intp`` is the smallest data type
-  sufficient to safely index any array; for advanced indexing it may be
-  faster than other types.
 * For advanced assignments, there is in general no guarantee for the
   iteration order. This means that if an element is set more than once,
   it is not possible to predict the final result.
 * An empty (tuple) index is a full scalar index into a zero dimensional array.
-  ``x[()]`` returns a *scalar* if ``x`` is zero dimensional and a view
-  otherwise. On the other hand ``x[...]`` always returns a view.
-* If a zero dimensional array is present in the index *and* it is a full
-  integer index the result will be a *scalar* and not a zero dimensional array.
-  (Advanced indexing is not triggered.)
-* When an ellipsis (``...``) is present but has no size (i.e. replaces zero
-  ``:``) the result will still always be an array. A view if no advanced index
-  is present, otherwise a copy.
+  ``x[()]`` returns a *scalar* `ndarray` if ``x`` has zero dimensions.
+  On the other hand ``x[...]`` always returns a view.
+* If a zero dimensional array is present in the index *and* it is *not considered as* a full
+  integer index as in NumPy. Advanced indexing is not triggered.
 * the ``nonzero`` equivalence for Boolean arrays does not hold for zero
   dimensional boolean arrays.
 * When the result of an advanced indexing operation has no elements but an
-  individual index is out of bounds, whether or not an ``IndexError`` is
-  raised is undefined (e.g. ``x[[], [123]]`` with ``123`` being out of bounds).
-* When a *casting* error occurs during assignment (for example updating a
-  numerical array using a sequence of strings), the array being assigned
-  to may end up in an unpredictable partially updated state.
-  However, if any other error (such as an out of bounds index) occurs, the
-  array will remain unchanged.
-* The memory layout of an advanced indexing result is optimized for each
-  indexing operation and no particular memory order can be assumed.
-* When using a subclass (especially one which manipulates its shape), the
-  default ``ndarray.__setitem__`` behaviour will call ``__getitem__`` for
-  *basic* indexing but not for *advanced* indexing. For such a subclass it may
-  be preferable to call ``ndarray.__setitem__`` with a *base class* ndarray
-  view on the data. This *must* be done if the subclasses ``__getitem__`` does
-  not return views.
-
-.. _arrays.indexing.fields:
-
-
-Field Access
--------------
-
-.. seealso:: :ref:`arrays.dtypes`, :ref:`arrays.scalars`
-
-If the :class:`ndarray` object is a structured array the :term:`fields <field>`
-of the array can be accessed by indexing the array with strings,
-dictionary-like.
-
-Indexing ``x['field-name']`` returns a new :term:`view` to the array,
-which is of the same shape as *x* (except when the field is a
-sub-array) but of data type ``x.dtype['field-name']`` and contains
-only the part of the data in the specified field. Also
-:ref:`record array <arrays.classes.rec>` scalars can be "indexed" this way.
-
-Indexing into a structured array can also be done with a list of field names,
-*e.g.* ``x[['field-name1','field-name2']]``. As of NumPy 1.16 this returns a
-view containing only those fields. In older versions of numpy it returned a
-copy. See the user guide section on :ref:`structured_arrays` for more
-information on multifield indexing.
-
-If the accessed field is a sub-array, the dimensions of the sub-array
-are appended to the shape of the result.
-
-.. admonition:: Example
-
-   >>> x = np.zeros((2,2), dtype=[('a', np.int32), ('b', np.float64, (3,3))])
-   >>> x['a'].shape
-   (2, 2)
-   >>> x['a'].dtype
-   dtype('int32')
-   >>> x['b'].shape
-   (2, 2, 3, 3)
-   >>> x['b'].dtype
-   dtype('float64')
-
-
-Flat Iterator indexing
-----------------------
-
-:attr:`x.flat <ndarray.flat>` returns an iterator that will iterate
-over the entire array (in C-contiguous style with the last index
-varying the fastest). This iterator object can also be indexed using
-basic slicing or advanced indexing as long as the selection object is
-not a tuple. This should be clear from the fact that :attr:`x.flat
-<ndarray.flat>` is a 1-dimensional view. It can be used for integer
-indexing with 1-dimensional C-style-flat indices. The shape of any
-returned array is therefore the shape of the integer indexing object.
+  individual index is out of bounds, currently no ``IndexError`` is
+  raised as in NumPy.
 
 .. index::
    single: indexing
