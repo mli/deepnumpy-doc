@@ -24,10 +24,7 @@ and via the methods and attributes of the :class:`ndarray`.
 Different :class:`ndarrays <ndarray>` can share the same data, so that
 changes made in one :class:`ndarray` may be visible in another. That
 is, an ndarray can be a *"view"* to another ndarray, and the data it
-is referring to is taken care of by the *"base"* ndarray. ndarrays can
-also be views to memory owned by Python :class:`strings <str>` or
-objects implementing the :class:`buffer` or :ref:`array
-<arrays.interface>` interfaces.
+is referring to is taken care of by the *"base"* ndarray.
 
 
 .. admonition:: Example
@@ -37,7 +34,7 @@ objects implementing the :class:`buffer` or :ref:`array
 
    >>> x = np.array([[1, 2, 3], [4, 5, 6]], np.int32)
    >>> type(x)
-   <type 'numpy.ndarray'>
+   <class 'mxnet.numpy.ndarray'>
    >>> x.shape
    (2, 3)
    >>> x.dtype
@@ -47,19 +44,17 @@ objects implementing the :class:`buffer` or :ref:`array
 
    >>> # The element of x in the *second* row, *third* column, namely, 6.
    >>> x[1, 2]
+   array(6, dtype=int32)  # this is different than the official NumPy which returns a np.int32 object
 
    For example :ref:`slicing <arrays.indexing>` can produce views of
-   the array:
+   the array if the elements to be sliced is continguous in memory:
 
-   >>> y = x[:,1]
+   >>> y = x[1,:]
    >>> y
-   array([2, 5])
-   >>> y[0] = 9 # this also changes the corresponding element in x
-   >>> y
-   array([9, 5])
+   array([9, 5, 6], dtype=int32)  # this also changes the corresponding element in x
    >>> x
-   array([[1, 9, 3],
-          [4, 5, 6]])
+   array([[1, 2, 3],
+           [9, 5, 6]], dtype=int32)
 
 
 Constructing arrays
@@ -104,6 +99,13 @@ the bytes are interpreted is defined by the :ref:`data-type object
 
 .. index:: C-order, Fortran-order, row-major, column-major, stride,
   offset
+
+.. note::
+
+    `mxnet.numpy.ndarray` currently only supports storing elements in
+    C-order/row-major and contiguous memory space. The following content
+    on explaining a variety of memory layouts of an ndarray
+    are copied from the official NumPy documentation as a comprehensive reference.
 
 A segment of memory is inherently 1-dimensional, and there are many
 different schemes for arranging the items of an *N*-dimensional array
@@ -251,30 +253,6 @@ Other attributes
    ndarray.flat
    ndarray.ctypes
 
-
-.. _arrays.ndarray.array-interface:
-
-Array interface
----------------
-
-.. seealso:: :ref:`arrays.interface`.
-
-==========================  ===================================
-:obj:`__array_interface__`  Python-side of the array interface
-:obj:`__array_struct__`     C-side of the array interface
-==========================  ===================================
-
-:mod:`ctypes` foreign function interface
-----------------------------------------
-
-.. autosummary::
-   :toctree: generated/
-
-
-::
-
-   ndarray.ctypes
-
 .. _array.ndarray.methods:
 
 Array methods
@@ -305,17 +283,17 @@ Array conversion
 
    ndarray.item
    ndarray.copy
+   ndarray.tolist
+   ndarray.astype
 
 ::
 
-   ndarray.tolist
    ndarray.itemset
    ndarray.tostring
    ndarray.tobytes
    ndarray.tofile
    ndarray.dump
    ndarray.dumps
-   ndarray.astype
    ndarray.byteswap
    ndarray.view
    ndarray.getfield
@@ -353,20 +331,20 @@ the operation should proceed.
 .. autosummary::
    :toctree: generated/
 
+   ndarray.nonzero
    ndarray.take
    ndarray.repeat
-   ndarray.sort
-   ndarray.argsort
 
 
 ::
 
+   ndarray.argsort
+   ndarray.sort
    ndarray.put
    ndarray.choose
    ndarray.partition
    ndarray.argpartition
    ndarray.searchsorted
-   ndarray.nonzero
    ndarray.compress
    ndarray.diagonal
 
@@ -438,19 +416,19 @@ be performed.
    ndarray.min
    ndarray.argmin
    ndarray.clip
-   ndarray.round
    ndarray.sum
    ndarray.mean
    ndarray.prod
-
-::
-
-   ndarray.ptp
-   ndarray.conj
-   ndarray.trace
    ndarray.cumsum
    ndarray.var
    ndarray.std
+
+::
+
+   ndarray.round
+   ndarray.ptp
+   ndarray.conj
+   ndarray.trace
    ndarray.cumprod
    ndarray.all
    ndarray.any
@@ -496,10 +474,7 @@ Truth value of an array (:func:`bool()`):
    Truth-value testing of an array invokes
    :meth:`ndarray.__bool__`, which raises an error if the number of
    elements in the array is larger than 1, because the truth value
-   of such arrays is ambiguous. Use :meth:`.any() <ndarray.any>` and
-   :meth:`.all() <ndarray.all>` instead to be clear about what is meant
-   in such cases. (If the number of elements is 0, the array evaluates
-   to ``False``.)
+   of such arrays is ambiguous.
 
 
 Unary operations:
@@ -594,13 +569,6 @@ Matrix Multiplication:
 
    ndarray.__matmul__
 
-.. note::
-
-   Matrix operators ``@`` and ``@=`` were introduced in Python 3.5
-   following PEP465. NumPy 1.10.0 has a preliminary implementation of ``@``
-   for testing purposes. Further documentation can be found in the
-   :func:`matmul` documentation.
-
 
 Special methods
 ===============
@@ -623,11 +591,10 @@ Basic customization:
 .. autosummary::
    :toctree: generated/
 
-   ndarray.__new__
-
 ::
 
    ndarray.__array__
+   ndarray.__new__
    ndarray.__array_wrap__
 
 Container customization: (see :ref:`Indexing <arrays.indexing>`)
@@ -643,9 +610,8 @@ Container customization: (see :ref:`Indexing <arrays.indexing>`)
 
    ndarray.__contains__
 
-Conversion; the operations :func:`int()`, :func:`float()` and
-:func:`complex()`.
-. They work only on arrays that have one element in them
+Conversion; the operations :func:`int()` and :func:`float()`.
+They work only on arrays that have one element in them
 and return the appropriate scalar.
 
 .. autosummary::
