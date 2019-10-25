@@ -26,11 +26,11 @@ Searching
    :toctree: generated/
 
    argmax
+   argmin
 
 ::
 
    nanargmax
-   argmin
    nanargmin
    argwhere
    nonzero

@@ -16,14 +16,14 @@ Trigonometric functions
    arctan
    degrees
    radians
+   hypot
+   arctan2
+   deg2rad
+   rad2deg
 
 ::
 
-   hypot
-   arctan2
    unwrap
-   deg2rad
-   rad2deg
 
 Hyperbolic functions
 --------------------
@@ -47,10 +47,10 @@ Rounding
    floor
    ceil
    trunc
+   around
 
 ::
 
-   around
    round_
 
 
@@ -60,14 +60,14 @@ Sums, products, differences
    :toctree: generated/
 
    sum
+   prod
+   cumsum
 
 ::
 
-   prod
    nanprod
    nansum
    cumprod
-   cumsum
    nancumprod
    nancumsum
    diff
@@ -110,13 +110,13 @@ Floating point routines
 .. autosummary::
    :toctree: generated/
 
+   ldexp
 
 ::
 
    signbit
    copysign
    frexp
-   ldexp
    nextafter
    spacing
 
@@ -125,10 +125,10 @@ Rational routines
 .. autosummary::
    :toctree: generated/
 
+   lcm
 
 ::
 
-   lcm
    gcd
 
 Arithmetic operations
@@ -143,18 +143,18 @@ Arithmetic operations
    power
    subtract
    mod
+   multiply
+   true_divide
+   remainder
 
 ::
 
    positive
-   multiply
-   true_divide
    floor_divide
    float_power
 
    fmod
    modf
-   remainder
    divmod
 
 Handling complex numbers
