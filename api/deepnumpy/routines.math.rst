@@ -3,6 +3,14 @@ Mathematical functions
 
 .. currentmodule:: mxnet.np
 
+.. note::
+
+   Currently, most of the math functions only support inputs and outputs of the same dtype.
+   This limitation usually results in imprecise outputs for ndarrays with integral dtype
+   while floating-point values are expected in the output.
+   Appropriate handling of ndarrays integral dtypes is in active development.
+
+
 Trigonometric functions
 -----------------------
 .. autosummary::

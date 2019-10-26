@@ -67,11 +67,9 @@ New arrays can be constructed using the routines detailed in
 .. autosummary::
    :toctree: generated/
 
-::
-   # error to import abs
    ndarray
 
-.. _arrays.ndarray.indexing:
+::
 
 
 Indexing arrays

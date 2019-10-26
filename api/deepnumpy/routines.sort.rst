@@ -8,10 +8,9 @@ Sorting
 .. autosummary::
    :toctree: generated/
 
-   ndarray.sort
-
 ::
 
+   ndarray.sort
    sort
    lexsort
    argsort
