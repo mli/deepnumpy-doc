@@ -4,7 +4,7 @@ DeepNumPy
 =============
 
 DeepNumPy in MXNet provides a NumPy-like interface with extensions
-for deep learning. It contains two modules, ``mxnet.np``. which is similar to
+for deep learning. It contains two modules, ``mxnet.np``, which is similar to
 NumPy, and ``mxnet.npx``, which contains extended operators that are useful for deep
 learning. If this is your first time using DeepNumPy, we recommend that you review the following resources.
 
