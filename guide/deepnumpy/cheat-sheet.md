@@ -1,7 +1,7 @@
 # The DeepNumPy Cheat Sheet
 :label:`deepnumpy_cheat_sheet`
 
-Let first import the `np` and `npx` module, and update MXNet to run in the
+To begin, import the `np` and `npx` module and update MXNet to run in
 NumPy-like mode.
 
 ```{.python .input  n=1}
@@ -374,7 +374,7 @@ np.concatenate((a,b),axis=0) # Concatenate arrays
 ### Splitting Arrays
 
 ```{.python .input  n=63}
-# np.hsplit(a,3) # Split the array horizontally at the 3rd
+# np.hsplit(a,3) # Split the array horizontally at the 3rd index
 ```
 
 ```{.python .input  n=63}
@@ -383,7 +383,7 @@ np.concatenate((a,b),axis=0) # Concatenate arrays
 
 ## Use GPUs
 
-Needs to install the GPU-enabled MXNet with GPU should exists.
+Prerequisites: A GPU exists and GPU-enabled MXNet is installed.
 
 ```{.python .input}
 npx.num_gpus()  # Query number of GPUs
@@ -411,7 +411,7 @@ g1.copyto(gpu_0)
 ```
 
 ```{.python .input}
-# Return itself if matching the context, copy otherwise
+# Return itself if matching the context, otherwise copy
 g1.copyto(gpu_0), g1.copyto(gpu_0)
 ```
 
@@ -420,14 +420,14 @@ g1.context  # Query the device an array is on
 ```
 
 ```{.python .input}
-## The computatoin is performed by the devices on which the input arrays are
+## The computation is performed by the devices on which the input arrays are
 g0 + g1.copyto(gpu_0)
 ```
 
 ## Auto Differentiation
 
 ```{.python .input}
-a.attach_grad() # allocate gradient for a variable
+a.attach_grad() # Allocate gradient for a variable
 a.grad # access the gradient
 ```
 
@@ -444,4 +444,4 @@ a.grad
 
 **Acknowledgement**
 
-A large part of this cheat sheet is adapted from www.datacamp.com.
+Adapted from www.datacamp.com.
