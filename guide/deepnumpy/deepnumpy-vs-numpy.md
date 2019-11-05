@@ -1,23 +1,23 @@
 # DeepNumPy versus NumPy
 :label:`deepnumpy_vs_numpy`
 
-This tutorial lists some known difference between `mxnet.np` and `numpy`. It aims for a quick guideline for NumPy users to use MXNet's numpy-like API. 
+This topic lists known differences between `mxnet.np` and `numpy`. With this quick reference, NumPy users can more easily adopt  the MXNet NumPy-like API. 
 
 ```{.python .input}
 import numpy as onp  # o means original
 from mxnet import np, npx
-npx.set_np()  # Configue MXNet to be numpy-like
+npx.set_np()  # Configue MXNet to be NumPy-like
 ```
 
 ## Missing Operators
 
-A large amount of operators in numpy has not been supported in MXNet yet (working on it). You can find those missing operators in :ref:`reference`, which are displayed in gray blocks instead of having links to their documents. 
+Many, but not all, operators in NumPy are supported in MXNet. You can find the missing operators in :ref:`reference`. They're displayed in gray blocks instead of having links to their documents. 
 
-In addition, an operator may do not contain all arguments available in numpy, such as MXNet does not support stride. You need to check the operator document for more details. 
+In addition, an operator might not contain all arguments available in NumPy. For example, MXNet does not support stride. Check the operator document for more details. 
 
 ## Extra Functionalities 
 
-The `mxnet.np` module aims to mimic numpy.  Most extra functionalities that enhance numpy for deep learning usages are available on other modules, such as `npx` for operators used in deep learning and `autograd` for automatic differentiation. We may still slightly modify the `np` module API. One notable change is GPU support. Creating routines accepts a `ctx` argument:
+The `mxnet.np` module aims to mimic NumPy.  Most extra functionalities that enhance NumPy for deep learning use are available on other modules, such as `npx` for operators used in deep learning and `autograd` for automatic differentiation. The `np` module API is not complete. One notable change is GPU support. Creating routines accepts a `ctx` argument:
 
 ```{.python .input}
 gpu = npx.gpu() if npx.num_gpus() > 0 else npx.cpu()
@@ -34,7 +34,7 @@ a.copyto(npx.cpu()), b.as_in_context(npx.cpu())
 
 ## Default Data Types
 
-Numpy in default uses 64-bit floating numbers or 64-bit integers. 
+NumPy uses 64-bit floating numbers or 64-bit integers by default. 
 
 ```{.python .input}
 onp.array([1,2]).dtype, onp.array([1.2,2.3]).dtype
@@ -48,14 +48,14 @@ np.array([1,2]).dtype, np.array([1.2,2.3]).dtype
 
 ## Scalars
 
-Numpy as has classes for scalars, whose base class is 'numpy.generic'. The returns of selecting an element and reduce operators are scalars. 
+NumPy has classes for scalars, whose base class is 'numpy.generic'. The return values of selecting an element and reduce operators are scalars. 
 
 ```{.python .input}
 a = onp.array([1,2])
 type(a[0]), type(a.sum())
 ```
 
-A scalar is almost identical to a 0-rank tensor (TODO, there may be subtle difference), but it has a different class, so we can check their data type with `isinstance` 
+A scalar is almost identical to a 0-rank tensor (TODO, there may be subtle difference), but it has a different class. You can check the data type with `isinstance` 
 
 ```{.python .input}
 b = a[0]
@@ -77,7 +77,7 @@ b.ndim, b.size, isinstance(b, np.ndarray)
 
 ## Save
 
-The `save` method in `mxnet.np` save data into a binary format that's not compatible with numpy's format, e.g., it contains the device information. (TODO, needs more discussion here.). 
+The `save` method in `mxnet.np` saves data into a binary format that's not compatible with NumPy format, e.g., it contains the device information. (TODO, needs more discussion here.) 
 
 ```{.python .input}
 a = np.array(1, ctx=gpu)
@@ -87,7 +87,7 @@ npx.load('a')
 
 ## Matplotlib
 
-Sometimes MXNet's ndarray cannot used by other libraries that accepts numpy inputs, such as matplotlib. The best practice is converting it to numpy with `asnumpy()`.
+Sometimes the MXNet ndarray cannot used by other libraries that accept NumPy input, for example matplotlib. The best practice is converting to NumPy with `asnumpy()`.
 
 ```{.python .input}
 %matplotlib inline
