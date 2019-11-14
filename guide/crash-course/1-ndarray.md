@@ -1,18 +1,18 @@
-# Manipulate data with DeepNumPy
+# Manipulating Data with MXNet/NumPy Module
 :label:`crash_course_ndarray`
 
 We'll start by introducing the `np` package, MXNet’s primary tool for storing and
-transforming data. If you’ve worked with `NumPy` before, you’ll notice `np`  is,
+transforming data. If you’ve worked with `NumPy` before, you’ll notice `np` is,
 by design, similar to NumPy.
 
 ## Get started
 
 To get started, let's import the `np` package together with `npx`, which stands
-for NumPy extensions. We call `np` with `npx` as the DeepNumPy frontend.
+for NumPy extension. We call `np` and `npx` as the MXNet/NumPy frontend.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
-npx.set_np()  # Change MXNet to the numpy-like mode.
+npx.set_np()  # Activate NumPy-like mode.
 ```
 
 Next, let's see how to create a 2D array (also called a matrix) with values from two sets of numbers: 1, 2, 3 and 4, 5, 6. This might also be referred to as a tuple of a tuple of integers.

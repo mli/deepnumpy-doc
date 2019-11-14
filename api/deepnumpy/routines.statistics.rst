@@ -10,6 +10,8 @@ Order statistics
 .. autosummary::
    :toctree: generated/
 
+   min
+   max
 
 ::
 
@@ -30,13 +32,13 @@ Averages and variances
    :toctree: generated/
 
    mean
+   std
+   var
 
 ::
 
    median
    average
-   std
-   var
    nanmedian
    nanmean
    nanstd
@@ -61,10 +63,10 @@ Histograms
 .. autosummary::
    :toctree: generated/
 
+   histogram
 
 ::
 
-   histogram
    histogram2d
    histogramdd
    bincount

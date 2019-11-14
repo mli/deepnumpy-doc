@@ -3,6 +3,14 @@ Mathematical functions
 
 .. currentmodule:: mxnet.np
 
+.. note::
+
+   Currently, most of the math functions only support inputs and outputs of the same dtype.
+   This limitation usually results in imprecise outputs for ndarrays with integral dtype
+   while floating-point values are expected in the output.
+   Appropriate handling of ndarrays integral dtypes is in active development.
+
+
 Trigonometric functions
 -----------------------
 .. autosummary::
@@ -16,14 +24,14 @@ Trigonometric functions
    arctan
    degrees
    radians
+   hypot
+   arctan2
+   deg2rad
+   rad2deg
 
 ::
 
-   hypot
-   arctan2
    unwrap
-   deg2rad
-   rad2deg
 
 Hyperbolic functions
 --------------------
@@ -47,10 +55,10 @@ Rounding
    floor
    ceil
    trunc
+   around
 
 ::
 
-   around
    round_
 
 
@@ -60,14 +68,14 @@ Sums, products, differences
    :toctree: generated/
 
    sum
+   prod
+   cumsum
 
 ::
 
-   prod
    nanprod
    nansum
    cumprod
-   cumsum
    nancumprod
    nancumsum
    diff
@@ -110,13 +118,13 @@ Floating point routines
 .. autosummary::
    :toctree: generated/
 
+   ldexp
 
 ::
 
    signbit
    copysign
    frexp
-   ldexp
    nextafter
    spacing
 
@@ -125,10 +133,10 @@ Rational routines
 .. autosummary::
    :toctree: generated/
 
+   lcm
 
 ::
 
-   lcm
    gcd
 
 Arithmetic operations
@@ -143,18 +151,18 @@ Arithmetic operations
    power
    subtract
    mod
+   multiply
+   true_divide
+   remainder
 
 ::
 
    positive
-   multiply
-   true_divide
    floor_divide
    float_power
 
    fmod
    modf
-   remainder
    divmod
 
 Handling complex numbers

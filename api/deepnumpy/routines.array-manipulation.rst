@@ -19,12 +19,12 @@ Changing array shape
 
 
    reshape
+   ravel
+   ndarray.flatten
 
 ::
 
-   ravel
    ndarray.flat
-   ndarray.flatten
 
 Transpose-like operations
 =========================
@@ -34,10 +34,10 @@ Transpose-like operations
    swapaxes
    ndarray.T
    transpose
+   moveaxis
 
 ::
 
-   moveaxis
    rollaxis
 
 Changing number of dimensions
@@ -47,6 +47,8 @@ Changing number of dimensions
 
    expand_dims
    squeeze
+   broadcast_to
+   broadcast_arrays
 
 ::
 
@@ -54,8 +56,6 @@ Changing number of dimensions
    atleast_2d
    atleast_3d
    broadcast
-   broadcast_to
-   broadcast_arrays
 
 Changing kind of array
 ======================
@@ -81,13 +81,13 @@ Joining arrays
 
    concatenate
    stack
+   dstack
+   vstack
 
 ::
 
    column_stack
-   dstack
    hstack
-   vstack
    block
 
 Splitting arrays
@@ -96,13 +96,13 @@ Splitting arrays
    :toctree: generated/
 
    split
+   hsplit
+   vsplit
 
 ::
 
    array_split
    dsplit
-   hsplit
-   vsplit
 
 Tiling arrays
 =============
@@ -117,6 +117,8 @@ Adding and removing elements
 .. autosummary::
    :toctree: generated/
 
+   unique
+
 ::
 
    delete
@@ -124,7 +126,6 @@ Adding and removing elements
    append
    resize
    trim_zeros
-   unique
 
 Rearranging elements
 ====================
@@ -132,11 +133,11 @@ Rearranging elements
    :toctree: generated/
 
    reshape
+   flip
+   roll
+   rot90
 
 ::
 
-   flip
    fliplr
    flipud
-   roll
-   rot90

@@ -23,12 +23,12 @@ Simple random data
 .. autosummary::
    :toctree: generated/
 
+   choice
 
 ::
 
    random
    integers
-   choice
    bytes
 
 Permutations
@@ -50,6 +50,8 @@ Distributions
 
    normal
    uniform
+   rand
+   randint
 
 ::
 
