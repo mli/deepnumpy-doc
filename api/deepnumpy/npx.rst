@@ -10,13 +10,17 @@ Compatibility
    :toctree: generated/
 
    set_np
+   reset_np
+
+.. code::
+
    is_np_array
    use_np_array
    is_np_shape
    use_np_shape
    np_array
    np_shape
-   reset_np
+
 
 Devices
 ---------
@@ -66,7 +70,6 @@ More operators
    threading
    topk
    waitall
-   seed
    load
    save
    one_hot
@@ -76,3 +79,7 @@ More operators
    batch_dot
    gamma
    sequence_mask
+
+.. code::
+
+   seed

@@ -26,16 +26,16 @@ Matrix and vector products
    :toctree: generated/
 
    dot
+   vdot
+   inner
+   outer
+   tensordot
+   einsum
 
 ::
 
    linalg.multi_dot
-   vdot
-   inner
-   outer
    matmul
-   tensordot
-   einsum
    einsum_path
    linalg.matrix_power
    kron
@@ -45,12 +45,12 @@ Decompositions
 .. autosummary::
    :toctree: generated/
 
+   linalg.svd
 
 ::
 
    linalg.cholesky
    linalg.qr
-   linalg.svd
 
 Matrix eigenvalues
 ------------------
@@ -71,6 +71,7 @@ Norms and other numbers
    :toctree: generated/
 
    linalg.norm
+   trace
 
 ::
 
@@ -78,7 +79,6 @@ Norms and other numbers
    linalg.det
    linalg.matrix_rank
    linalg.slogdet
-   trace
 
 Solving equations and inverting matrices
 ----------------------------------------
@@ -104,25 +104,3 @@ Exceptions
 ::
 
    linalg.LinAlgError
-
-.. _routines.linalg-broadcasting:
-
-Linear algebra on several matrices at once
-------------------------------------------
-
-.. versionadded:: 1.8.0
-
-Several of the linear algebra routines listed above are able to
-compute results for several matrices at once, if they are stacked into
-the same array.
-
-This is indicated in the documentation via input parameter
-specifications such as ``a : (..., M, M) array_like``. This means that
-if for instance given an input array ``a.shape == (N, M, M)``, it is
-interpreted as a "stack" of N matrices, each of size M-by-M. Similar
-specification applies to return values, for instance the determinant
-has ``det : (...)`` and will in this case return an array of shape
-``det(a).shape == (N,)``. This generalizes to linear algebra
-operations on higher-dimensional arrays: the last 1 or 2 dimensions of
-a multidimensional array are interpreted as vectors or matrices, as
-appropriate for each operation.

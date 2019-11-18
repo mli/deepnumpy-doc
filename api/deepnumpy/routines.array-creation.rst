@@ -12,6 +12,10 @@ Ones and zeros
 .. autosummary::
    :toctree: generated/
 
+   eye
+   empty
+   full
+   identity
    ones
    ones_like
    zeros
@@ -19,12 +23,8 @@ Ones and zeros
 
 .. code::
 
-   full
    full_like
-   identity
-   empty
    empty_like
-   eye
 
 From existing data
 ------------------
@@ -88,13 +88,13 @@ Numerical ranges
    :toctree: generated/
 
    arange
+   linspace
+   logspace
+   meshgrid
 
 .. code::
 
-   linspace
-   logspace
    geomspace
-   meshgrid
    mgrid
    ogrid
 
@@ -103,12 +103,13 @@ Building matrices
 .. autosummary::
    :toctree: generated/
 
+   tril
+
 .. code::
 
    diag
    diagflat
    tri
-   tril
    triu
    vander
 

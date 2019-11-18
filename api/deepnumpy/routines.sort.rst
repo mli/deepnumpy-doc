@@ -8,10 +8,9 @@ Sorting
 .. autosummary::
    :toctree: generated/
 
-   ndarray.sort
-
 ::
 
+   ndarray.sort
    sort
    lexsort
    argsort
@@ -26,11 +25,11 @@ Searching
    :toctree: generated/
 
    argmax
+   argmin
 
 ::
 
    nanargmax
-   argmin
    nanargmin
    argwhere
    nonzero

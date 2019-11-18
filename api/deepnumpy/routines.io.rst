@@ -22,12 +22,12 @@ Text files
 .. autosummary::
    :toctree: generated/
 
+   genfromtxt
 
 ::
 
    loadtxt
    savetxt
-   genfromtxt
    fromregex
    fromstring
    ndarray.tofile
