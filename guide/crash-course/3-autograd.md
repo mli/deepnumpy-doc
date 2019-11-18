@@ -69,7 +69,7 @@ def f(a):
     return c
 ```
 
-In this exmaple, you record the trace and feed in a random value.
+In this example, you record the trace and feed in a random value.
 
 ```{.python .input}
 a = np.random.uniform(size=2)
