@@ -54,7 +54,7 @@ x.grad
 
 Sometimes you want to write dynamic programs where the execution depends on real-time values. MXNet records the execution trace and computes the gradient as well.
 
-Consider the following function `f`. The function doubles the inputs until it's `norm` reaches 1000. Then it selects one element depending on the sum of its elements. The following example code 
+Consider the following function `f` in the following example code. The function doubles the inputs until its `norm` reaches 1000. Then it selects one element depending on the sum of its elements. 
 <!-- I wonder if there could be another less "mathy" demo of this -->
 
 ```{.python .input}
