@@ -79,7 +79,7 @@ with autograd.record():
 c.backward()
 ```
 
-You can see that `b` is a linear function of `a`, and `c` is chosen from `b`. The gradient with respect to `a` be will be either `[c/a[0], 0]` or `[0, c/a[1]]`, depending on which element from `b` is picked. You can find the results, with this code:
+You can see that `b` is a linear function of `a`, and `c` is chosen from `b`. The gradient with respect to `a` be will be either `[c/a[0], 0]` or `[0, c/a[1]]`, depending on which element from `b` is picked. You see the results of this example with this code:
 
 ```{.python .input}
 a.grad == c/a
