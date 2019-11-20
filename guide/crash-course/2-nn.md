@@ -1,8 +1,10 @@
-# Create a neural network
+# Step 2: Create a neural network
 :label:`crash_course_nn`
 
 
-Now let's look how to create neural networks in Gluon. In addition the `np` package that we just covered, we now will also import the neural network `nn` package from `gluon`.
+In this step, you learn how to use DeepNumPy to create neural networks in Gluon. In addition to the `np` package that you learned about in the previous step :ref:`crash_course_ndarray`, you also import the neural network `nn` package from `gluon`.
+
+Use the following commands to import the packages required for this step.
 
 ```{.python .input  n=2}
 from mxnet import np, npx
@@ -12,7 +14,7 @@ npx.set_np()  # Change MXNet to the numpy-like mode.
 
 ## Create your neural network's first layer
 
-Let's start with a dense layer with 2 output units.
+Use the following code example to start with a dense layer with two output units.
 <!-- mention what the none and the linear parts mean? -->
 
 ```{.python .input  n=31}
@@ -20,20 +22,20 @@ layer = nn.Dense(2)
 layer
 ```
 
-Then initialize its weights with the default initialization method, which draws random values uniformly from $[-0.7, 0.7]$.
+Initialize its weights with the default initialization method, which draws random values uniformly from $[-0.7, 0.7]$. You can see this in the following example.
 
 ```{.python .input  n=32}
 layer.initialize()
 ```
 
-Then we do a forward pass with random data. We create a $(3,4)$ shape random input `x` and feed into the layer to compute the output.
+Do a forward pass with random data, shown in the following example. We create a $(3,4)$ shape random input `x` and feed into the layer to compute the output.
 
 ```{.python .input  n=34}
 x = np.random.uniform(-1,1,(3,4))
 layer(x)
 ```
 
-As can be seen, the layer's input limit of 2 produced a $(3,2)$ shape output from our $(3,4)$ input. Note that we didn't specify the input size of `layer` before (though we can specify it with the argument `in_units=4` here), the system will automatically infer it during the first time we feed in data, create and initialize the weights. So we can access the weight after the first forward pass:
+As can be seen, the layer's input limit of two produced a $(3,2)$ shape output from our $(3,4)$ input. You didn't specify the input size of `layer` before, though you can specify it with the argument `in_units=4` here. The system  automatically infers it during the first time you feed in data, create, and initialize the weights. You can access the weight after the first forward pass, as shown in this example.
 
 ```{.python .input  n=35}
 # layer.weight.data() # FIXME
@@ -41,7 +43,7 @@ As can be seen, the layer's input limit of 2 produced a $(3,2)$ shape output fro
 
 ## Chain layers into a neural network
 
-Let's first consider a simple case that a neural network is a chain of layers. During the forward pass, we run layers sequentially one-by-one. The following code implements a famous network called [LeNet](http://yann.lecun.com/exdb/lenet/) through `nn.Sequential`.
+Consider a simple case where a neural network is a chain of layers. During the forward pass, you run layers sequentially one-by-one. Use the following code to implement a famous network called [LeNet](http://yann.lecun.com/exdb/lenet/) through `nn.Sequential`.
 
 ```{.python .input}
 net = nn.Sequential()
@@ -66,7 +68,7 @@ net
 
 <!--Mention the tuple option for kernel and stride as an exercise for the reader? Or leave it out as too much info for now?-->
 
-The usage of `nn.Sequential` is similar to `nn.Dense`. In fact, both of them are subclasses of `nn.Block`. The following codes show how to initialize the weights and run the forward pass.
+Using `nn.Sequential` is similar to `nn.Dense`. In fact, both of them are subclasses of `nn.Block`. Use the following code to initialize the weights and run the forward pass.
 
 ```{.python .input}
 net.initialize()
@@ -76,8 +78,8 @@ y = net(x)
 y.shape
 ```
 
-We can use `[]` to index a particular layer. For example, the following
-accesses the 1st layer's weight and 6th layer's bias.
+You can use `[]` to index a particular layer. For example, the following
+accesses the first layer's weight and sixth layer's bias.
 
 ```{.python .input}
 (net[0].weight.data().shape, net[5].bias.data().shape)
@@ -86,9 +88,9 @@ accesses the 1st layer's weight and 6th layer's bias.
 ## Create a neural network flexibly
 
 In `nn.Sequential`, MXNet will automatically construct the forward function that sequentially executes added layers.
-Now let's introduce another way to construct a network with a flexible forward function.
+Here is another way to construct a network with a flexible forward function.
 
-To do it, we create a subclass of `nn.Block` and implement two methods:
+Create a subclass of `nn.Block` and implement two methods by using the following code.
 
 - `__init__` create the layers
 - `forward` define the forward function.
@@ -111,9 +113,9 @@ net = MixMLP()
 net
 ```
 
-In the sequential chaining approach, we can only add instances with `nn.Block` as the base class and then run them in a forward pass. In this example, we used `print` to get the intermediate results and `nd.relu` to apply relu activation. So this approach provides a more flexible way to define the forward function.
+In the sequential chaining approach, you can only add instances with `nn.Block` as the base class and then run them in a forward pass. In this example, you used `print` to get the intermediate results and `nd.relu` to apply relu activation. This approach provides a more flexible way to define the forward function.
 
-The usage of `net` is similar as before.
+The following code example uses `net` in a similar manner as earlier.
 
 ```{.python .input}
 net.initialize()
@@ -121,13 +123,13 @@ x = np.random.uniform(size=(2,2))
 net(x)
 ```
 
-Finally, let's access a particular layer's weight
+Finally, access a particular layer's weight with this code.
 
 ```{.python .input  n=8}
 net.blk[1].weight.data()
 ```
 
-## Next Steps
+## Next steps
 
-Before introducing how to train a neural network, let's see how to automatically
+After you create a neural network, learn how to automatically
 compute the gradients in :ref:`crash_course_autograd`.
