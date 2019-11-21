@@ -1,4 +1,4 @@
-Getting started with DeepNumPy
+Getting started with NumPy on MXNet
 ============
 
 This crash course shows how to get started with NumPy on MXNet. The topics here provide a quick overview of the core concepts for both NP on MXNet, which helps you manipulate multiple dimensional arrays, and Gluon, which helps you create and train neural
