@@ -1,4 +1,4 @@
-# The DeepNumPy Cheat Sheet
+# The NumPy on MXNet cheat sheet
 :label:`deepnumpy_cheat_sheet`
 
 To begin, import the `np` and `npx` module and update MXNet to run in
@@ -11,7 +11,7 @@ npx.set_np()  # Change MXNet to the numpy-like mode.
 
 NDArray figure (TODO)
 
-## Creating Arrays
+## Creating arrays
 
 ```{.python .input  n=2}
 np.array([1, 2, 3])  # default datatype is float32
@@ -25,7 +25,7 @@ np.array([(1.5, 2, 3), (4, 5, 6)], dtype='float16')
 np.array([[(15,2,3), (4,5,6)], [(3,2,1), (4,5,6)]], dtype='int32')
 ```
 
-### Initial Placeholders
+### Initial placeholders
 
 ```{.python .input  n=5}
 np.zeros((3, 4))  # Create an array of zeros
@@ -62,7 +62,7 @@ np.empty((3,2))  # Create an empty array
 
 ## I/O
 
-### Saving and Loading on Disk
+### Saving and loading on disk
 
 ```{.python .input  n=12}
 # Save one array
@@ -78,7 +78,7 @@ npx.save('my_arrays', [a, b])  # FIXME, cannot be a tuple
 npx.load('my_arrays')
 ```
 
-### Saving & Loading Text Files
+### Saving and loading text files
 
 ```{.python .input  n=20}
 # np.loadtxt("myfile.txt")
@@ -86,7 +86,7 @@ npx.load('my_arrays')
 # np.savetxt("myarray.txt", a, delimiter=" ")
 ```
 
-## Data Types
+## Data types
 
 ```{.python .input  n=20}
 # np.int64    # Signed 64-bit integer types
@@ -98,7 +98,7 @@ npx.load('my_arrays')
 # np.unicode_ # Fixed-length unicode type
 ```
 
-## Inspecting Your Array
+## Inspecting your array
 
 ```{.python .input  n=21}
 a.shape # Array dimensions
@@ -134,9 +134,9 @@ b.astype('int') # Convert an array to a different type
 # np.info(np.ndarray.dtype)
 ```
 
-## Array Mathematics
+## Array mathematics
 
-### Arithmetic Operations
+### Arithmetic operations
 
 ```{.python .input  n=37}
 a - b # Subtraction
@@ -196,7 +196,7 @@ a.dot(b) # Dot product
 
 ### Comparison
 
-### Aggregate Functions
+### Aggregate functions
 
 ```{.python .input  n=51}
 a.sum() # Array-wise sum
@@ -231,7 +231,7 @@ a.mean() # Mean
 # np.std(b) # Standard deviation
 ```
 
-## Copying Arrays
+## Copying arrays
 
 ```{.python .input  n=63}
 # a.view() # Create a view of the array with the same data
@@ -255,7 +255,7 @@ a.copy() # Create a deep copy of the array
 # c.sort(axis=0) # Sort the elements of an array's axis
 ```
 
-## Subsetting, Slicing, Indexing
+## Subsetting, slicing, indexing
 
 ### Subsetting
 
@@ -295,7 +295,7 @@ a[ : :-1] #Reversed array a array([3, 2, 1])
 # a[a<2] # Select elements from a less than 2
 ```
 
-### Fancy Indexing
+### Fancy indexing
 
 ```{.python .input  n=63}
 c[[1,0,1,0], [0,1,2,0]] # Select elements (1,0),(0,1),(1,2) and (0,0)
@@ -305,9 +305,9 @@ c[[1,0,1,0], [0,1,2,0]] # Select elements (1,0),(0,1),(1,2) and (0,0)
 c[[1,0,1,0]][:,[0,1,2,0]] # Select a subset of the matrix’s rows
 ```
 
-## Array Manipulation
+## Array manipulation
 
-### Transposing Array
+### Transposing array
 
 ```{.python .input  n=63}
 np.transpose(c) # Permute array dimensions
@@ -317,7 +317,7 @@ np.transpose(c) # Permute array dimensions
 c.T # Permute array dimensions
 ```
 
-### Changing Array Shape
+### Changing array shape
 
 ```{.python .input  n=63}
 # b.ravel() # Flatten the array
@@ -327,7 +327,7 @@ c.T # Permute array dimensions
 # c.reshape(3,-2) # Reshape, but don’t change data
 ```
 
-### Adding/Removing Elements
+### Adding and removing elements
 
 ```{.python .input  n=63}
 # c.resize((6,2)) # Return a new array with shape (6, 2)
@@ -345,7 +345,7 @@ c.T # Permute array dimensions
 # np.delete(a, [1]) # Delete items from an array
 ```
 
-### Combining Arrays
+### Combining arrays
 
 ```{.python .input  n=63}
 np.concatenate((a,b),axis=0) # Concatenate arrays
@@ -371,7 +371,7 @@ np.concatenate((a,b),axis=0) # Concatenate arrays
 # np.c_[a,d] # Create stacked column-wise arrays
 ```
 
-### Splitting Arrays
+### Splitting arrays
 
 ```{.python .input  n=63}
 # np.hsplit(a,3) # Split the array horizontally at the 3rd index
@@ -424,7 +424,7 @@ g1.context  # Query the device an array is on
 g0 + g1.copyto(gpu_0)
 ```
 
-## Auto Differentiation
+## Auto differentiation
 
 ```{.python .input}
 a.attach_grad() # Allocate gradient for a variable
