@@ -1,6 +1,6 @@
 .. _deepnumpy_guide:
 
-NumPy on MXNet
+What is NumPy on MXNet
 =============
 
 NumPy on MXNet provides a NumPy-like interface with extensions
