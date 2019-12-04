@@ -1,13 +1,13 @@
 .. _reference:
 
-DeepNumPy Reference
+NumPy on MXNet reference
 ============================
 
 
 .. module:: mxnet.np
 
-This reference manual details functions, modules, and objects
-included in `mxnet.np`, describing what they are and what they do.
+This section contains the `mxnet.np` API reference documentation. The topics here explain the functions, modules, and objects
+included in `mxnet.np`. Use the links here to learn more.
 
 
 .. toctree::
@@ -27,4 +27,4 @@ included in `mxnet.np`, describing what they are and what they do.
 
 **Acknowledgements**
 
-Large parts of this manual originate from NumPy's documents.
+Large parts of this manual originate from NumPy documents.
