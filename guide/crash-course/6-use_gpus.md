@@ -78,7 +78,7 @@ Use the following command to create input data on GPU 0. The forward function wi
 # net(x) FIXME
 ```
 
-## [Advanced] Multi-GPU training
+## Training with multiple GPUs
 
 Finally, you can see how to use multiple GPUs to jointly train a neural network through data parallelism. Assume there are *n* GPUs. Split each data batch into *n* parts, and then each GPU will run the forward and backward passes using one part of the data.
 
@@ -129,7 +129,7 @@ for epoch in range(10):
         epoch, train_loss/len(train_data)/batch_size, time.time()-tic))
 ```
 
-## Next Steps
+## Next steps
 
-Now you have completed training and predicting with a neural network by using DeepNumPy and
+Now you have completed training and predicting with a neural network by using NumPy on MXNet and
 Gluon. You can check the guides to these two front ends: :ref:`deepnumpy_guide` and :ref:`gluon_guide`.
