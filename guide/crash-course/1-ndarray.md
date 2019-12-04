@@ -1,14 +1,14 @@
 
-# Step 1: Learn to manipulate data with MXNet-NumPy
+# Step 1: Manipulate data with NumPy on MXNet
 :label:`crash_course_ndarray`
 
-This getting started exercise introduces the `np` package, which is MXNet’s primary tool for storing and
-transforming data. If you’ve worked with NumPy before, you’ll notice `np`  is, by design, similar to NumPy.
+This getting started exercise introduces the `np` package, which is the primary tool for storing and
+transforming data on MXNet. If you’ve worked with NumPy before, you’ll notice `np` is, by design, similar to NumPy.
 
 ## Import packages and create an array
 
 
-To get started, run the following commands to import the `np` package together with the NumPy extensions package `npx`. Together, `np` with `npx` make up the DeepNumPy front end.
+To get started, run the following commands to import the `np` package together with the NumPy extensions package `npx`. Together, `np` with `npx` make up the NumPy on MXNet front end.
 
 ```{.python .input  n=1}
 from mxnet import np, npx
