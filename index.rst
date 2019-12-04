@@ -44,14 +44,14 @@ training neural networks.
       :title: Crash Course
       :link: guide/crash-course/index.html
 
-      A 60-min crash course to train and predict with a convolutional neural
+      A crash course to train and predict with a convolutional neural
       network.
 
    .. card::
-      :title: DeepNumPy
+      :title: NumPy on MXNet
       :link: guide/deepnumpy/index.html
 
-      Manipulate multi-dimensional arrays with the numpy-like interface.
+      Manipulate multi-dimensional arrays with the NumPy-like interface.
 
    .. card::
       :title: Gluon
