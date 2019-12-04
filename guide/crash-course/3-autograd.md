@@ -1,4 +1,4 @@
-# Step 3: Automatic differentiation with `autograd`
+# Step 3: Automatic differentiation with autograd
 :label:`crash_course_autograd`
 
 In this step, you learn how to use the MXNet `autograd` package to perform gradient calculations by automatically calculating derivatives.
