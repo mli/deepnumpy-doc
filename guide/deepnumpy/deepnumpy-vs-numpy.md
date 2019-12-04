@@ -1,4 +1,4 @@
-# DeepNumPy versus NumPy
+# Differences between NumPy on MXNet and NumPy
 :label:`deepnumpy_vs_numpy`
 
 This topic lists known differences between `mxnet.np` and `numpy`. With this quick reference, NumPy users can more easily adopt  the MXNet NumPy-like API. 
@@ -9,13 +9,13 @@ from mxnet import np, npx
 npx.set_np()  # Configue MXNet to be NumPy-like
 ```
 
-## Missing Operators
+## Missing operators
 
 Many, but not all, operators in NumPy are supported in MXNet. You can find the missing operators in :ref:`reference`. They're displayed in gray blocks instead of having links to their documents. 
 
 In addition, an operator might not contain all arguments available in NumPy. For example, MXNet does not support stride. Check the operator document for more details. 
 
-## Extra Functionalities 
+## Extra functionalities 
 
 The `mxnet.np` module aims to mimic NumPy.  Most extra functionalities that enhance NumPy for deep learning use are available on other modules, such as `npx` for operators used in deep learning and `autograd` for automatic differentiation. The `np` module API is not complete. One notable change is GPU support. Creating routines accepts a `ctx` argument:
 
@@ -32,7 +32,7 @@ Methods to move data across devices.
 a.copyto(npx.cpu()), b.as_in_context(npx.cpu())
 ```
 
-## Default Data Types
+## Default data types
 
 NumPy uses 64-bit floating numbers or 64-bit integers by default. 
 
@@ -77,7 +77,7 @@ b.ndim, b.size, isinstance(b, np.ndarray)
 
 ## Save
 
-The `save` method in `mxnet.np` saves data into a binary format that's not compatible with NumPy format, e.g., it contains the device information. (TODO, needs more discussion here.) 
+The `save` method in `mxnet.np` saves data into a binary format that's not compatible with NumPy format. For example, it contains the device information. (TODO, needs more discussion here.) 
 
 ```{.python .input}
 a = np.array(1, ctx=gpu)
