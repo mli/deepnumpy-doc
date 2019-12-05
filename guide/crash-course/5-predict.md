@@ -1,4 +1,4 @@
-# Step 5: Predict with a pre-trained model
+# Step 5: Predict with a pretrained model
 :label:`crash_course_predict`
 
 In this step, you learn how to predict new examples using a pretrained model. A saved model can be used in multiple places, such as to continue training, to fine tune the model, and for prediction.
