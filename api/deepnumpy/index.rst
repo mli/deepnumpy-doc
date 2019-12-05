@@ -1,6 +1,6 @@
 .. _reference:
 
-NumPy on MXNet reference
+NP on MXNet reference
 ============================
 
 
