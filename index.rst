@@ -1,4 +1,4 @@
-Apache MXNet (incubating) Documents
+Apache MXNet (incubating) documents
 ====================================
 
 :Date: |today|
@@ -9,9 +9,9 @@ Apache MXNet (incubating) Documents
 
    .. note::
 
-      This is a preview of Apache MXNet (incubating)'s new **numpy-like**
-      interface. It only contains a subset of documents, please check MXNet's
-      main website for more.
+      This is a preview of the Apache MXNet (incubating) new **NumPy-like**
+      interface. It only contains a subset of documents. For more information, see the MXNet 
+      main website.
 
 .. raw:: html
 
@@ -34,8 +34,8 @@ Installation
 Guidelines
 -------------
 
-This guide section is intended as an introductory overview of MXNet's modules
-for manipulating multi-dimensional arrays, loading data, contructing and
+This guide section is intended as an introductory overview of MXNet modules
+for manipulating multi-dimensional arrays, loading data, constructing and
 training neural networks.
 
 .. container:: cards
@@ -48,7 +48,7 @@ training neural networks.
       network.
 
    .. card::
-      :title: NumPy on MXNet
+      :title: NP on MXNet
       :link: guide/deepnumpy/index.html
 
       Manipulate multi-dimensional arrays with the NumPy-like interface.
@@ -57,7 +57,7 @@ training neural networks.
       :title: Gluon
       :link: guide/gluon/index.html
 
-      Load data, contrusct and train neural networks with Gluon.
+      Load data, construct and train neural networks with Gluon.
 
 
 API Documents
@@ -70,7 +70,7 @@ following categories:
 .. container:: cards
 
    .. card::
-      :title: DeepNumPy
+      :title: NP on MXNet
       :link: api/deepnumpy/index.html
 
       API documents for ``mxnet.np`` and ``mxnet.npx``.

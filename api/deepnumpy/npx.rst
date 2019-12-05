@@ -1,4 +1,4 @@
-NumPy Extensions
+NP Extensions
 ====================
 
 .. currentmodule:: mxnet.npx
