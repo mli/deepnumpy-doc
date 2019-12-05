@@ -1,4 +1,4 @@
-# Differences between NumPy on MXNet and NumPy
+# Differences between NP on MXNet and NumPy
 :label:`deepnumpy_vs_numpy`
 
 This topic lists known differences between `mxnet.np` and `numpy`. With this quick reference, NumPy users can more easily adopt  the MXNet NumPy-like API. 

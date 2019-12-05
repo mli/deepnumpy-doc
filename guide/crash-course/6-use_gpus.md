@@ -1,4 +1,4 @@
-# Step 6: Use GPUs to increase effiency
+# Step 6: Use GPUs to increase efficiency
 :label:`crash_course_gpu`
 
 In this step, you learn how to use graphics processing units (GPUs) with MXNet. If you use GPUs to train and deploy neural networks, you get significantly more computational power when compared to central processing units (CPUs).
@@ -131,5 +131,5 @@ for epoch in range(10):
 
 ## Next steps
 
-Now you have completed training and predicting with a neural network by using NumPy on MXNet and
+Now you have completed training and predicting with a neural network by using NP on MXNet and
 Gluon. You can check the guides to these two front ends: :ref:`deepnumpy_guide` and :ref:`gluon_guide`.

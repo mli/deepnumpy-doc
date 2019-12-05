@@ -1,4 +1,4 @@
-# The NumPy on MXNet cheat sheet
+# The NP on MXNet cheat sheet
 :label:`deepnumpy_cheat_sheet`
 
 To begin, import the `np` and `npx` module and update MXNet to run in

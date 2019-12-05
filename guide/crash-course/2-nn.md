@@ -2,7 +2,7 @@
 :label:`crash_course_nn`
 
 
-In this step, you learn how to use NumPy on MXNet to create neural networks in Gluon. In addition to the `np` package that you learned about in the previous step :ref:`crash_course_ndarray`, you also import the neural network `nn` package from `gluon`.
+In this step, you learn how to use NP on MXNet to create neural networks in Gluon. In addition to the `np` package that you learned about in the previous step :ref:`crash_course_ndarray`, you also import the neural network `nn` package from `gluon`.
 
 Use the following commands to import the packages required for this step.
 
