@@ -1,4 +1,4 @@
-# Documents for MXNet with NumPy on MXNet
+# Documents for MXNet with NP on MXNet
 
 
 How to build
