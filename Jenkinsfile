@@ -10,7 +10,7 @@ stage("Build and Publish") {
       conda create -n ${ENV_NAME} pip -y
       conda activate ${ENV_NAME}
       pip install mxnet-cu101==1.6.0b20191122
-      pip install git+https://github.com/d2l-ai/d2l-book
+      pip install git+https://github.com/d2l-ai/d2l-book@f26c20923edd4fb9fe9e6eb6e8d4b8976e41c22a
       pip install matplotlib
       pip list
       """
