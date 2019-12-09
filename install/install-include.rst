@@ -4,8 +4,8 @@
 .. role:: act
    :class: active option
 
-We have preview pip package available.  These packages
-haven't uploaded into Pypi server yet, so we need to select various options
+There is a preview pip package available.  These packages
+haven't uploaded into Pypi server yet, so you need to select various options
 manually.
 
 .. container:: install
@@ -85,19 +85,19 @@ manually.
 
              .. code-block:: bash
 
-                # Here we assume CUDA 10.0 is installed.
+                # You must have CUDA 10.0 is installed.
                 pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_cu100-1.5.0-py2.py3-none-manylinux1_x86_64.whl
 
           .. container:: cuda-mkl-dnn
 
               .. code-block:: bash
 
-                 # Here we assume CUDA 10.1 is installed.
+                 # You must have  CUDA 10.1 is installed.
                  pip install https://apache-mxnet.s3-accelerate.amazonaws.com/dist/python/numpy/latest/mxnet_cu101mkl-1.5.0-py2.py3-none-manylinux1_x86_64.whl
 
        .. container:: windows
 
-          Not supported yet.
+          Not supported.
 
 
 .. raw:: html
